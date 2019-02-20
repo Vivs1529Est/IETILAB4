@@ -48,21 +48,19 @@ class App extends Component {
 
                     <ul>
                         {localStorage.getItem('isLoggedIn') === "true"?
-                            <li><Link to="/todo">Todo</Link></li> : <li><Link to="/">Login</Link></li>}
+                            <li><Link to="/todo">Todo</Link></li> : <li><Link to="/">Login</Link></li>
+
+                              }
                     </ul>
 
                     <div>
                         {localStorage.getItem('isLoggedIn') === "true"?
-                            < Route path = "/todo" component={TodoView}/> : <Route exact path="/" component={LoginView}/>
+
+                            <TemporaryDrawer info={inf}/> : <Login/>
                         }
                     </div>
 
-                    <div>
-                                    {localStorage.getItem('page') === 'home' ?
-                                        <TemporaryDrawer info={inf}/> :
-                                        <Login/>
-                                    }
-                    </div>
+
                 </div>
             </Router>
         );
