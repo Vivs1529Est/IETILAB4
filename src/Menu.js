@@ -19,7 +19,7 @@ import ExitToApp from '@material-ui/icons/ExitToApp';
 import Edit from '@material-ui/icons/Edit';
 import Link from '@material-ui/core/Link';
 import AddIcon from '@material-ui/icons/Add';
-import userimage from './../user.svg'
+
 import {CardTask} from "../CardTask/CardTask";
 
 const drawerWidth = 320;
@@ -144,7 +144,7 @@ class TemporaryDrawer extends React.Component {
                     </div>
                     <Divider/>
                     <div className="grid">
-                        <img src={userimage} alt="userimg" className="img2"/>
+                        /*<img src={userimage} alt="userimg" className="img2"/>*/
                         <div>
                             <br/>
                             <Typography variant="h7">
@@ -171,9 +171,9 @@ class TemporaryDrawer extends React.Component {
                     })}
                 >
                     <div className={classes.drawerHeader}/>
-                    { this.state.tasks.map( task => {
+                    /*{ this.state.tasks.map( task => {
                         return(<CardTask info={task}/>);
-                    })}
+                    })}*/
                     <div className="rigth">
                         <Fab color="primary" aria-label="Add">
                             <AddIcon />
