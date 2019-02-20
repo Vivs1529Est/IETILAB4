@@ -19,9 +19,15 @@ export class TodoApp extends Component{
 
     render(){
         return (
+
+
             <div>
+
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+            <div id="root"></div>
                 <form onSubmit={this.handleSubmit} className="todo-form">
-                    <h3>New TODO</h3>
+                    <h3>Task Planner</h3>
 
                     <TextField
                         required
@@ -63,6 +69,7 @@ export class TodoApp extends Component{
                 <br/>
                 <TodoList todoList={this.state.items}/>
             </div>
+
             );
     }
 
