@@ -20,7 +20,7 @@ import Edit from '@material-ui/icons/Edit';
 import Link from '@material-ui/core/Link';
 import AddIcon from '@material-ui/icons/Add';
 
-import {CardTask} from "../CardTask/CardTask";
+import {CardTask} from "./CardTask";
 
 const drawerWidth = 320;
 
@@ -144,7 +144,7 @@ class TemporaryDrawer extends React.Component {
                     </div>
                     <Divider/>
                     <div className="grid">
-                        /*<img src={userimage} alt="userimg" className="img2"/>*/
+
                         <div>
                             <br/>
                             <Typography variant="h7">
