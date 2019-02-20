@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom';
-import Menu from './Menu';
+import {Menu} from './Menu/Menu';
 
 
 export class Todo extends React.Component {
@@ -22,4 +22,4 @@ export class Todo extends React.Component {
 
 }
 
-ReactDOM.render(<Menu />, document.querySelector('#root'));
+ReactDOM.render(<Menu/>, document.querySelector('#root'));

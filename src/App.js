@@ -8,6 +8,7 @@ import moment from "moment";
 import {Login} from "./component/Login";
 import {TodoApp} from "./TodoApp";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import TemporaryDrawer from './Menu';
 
 
 
@@ -30,7 +31,10 @@ class App extends Component {
     }
 
     render() {
-
+            const inf = {
+                        "name":"cosw",
+                        "email":"cosw"
+                    }
             return (
             <Router>
                 <div className="App">
@@ -51,6 +55,13 @@ class App extends Component {
                         {localStorage.getItem('isLoggedIn') === "true"?
                             < Route path = "/todo" component={TodoView}/> : <Route exact path="/" component={LoginView}/>
                         }
+                    </div>
+
+                    <div>
+                                    {localStorage.getItem('page') === 'home' ?
+                                        <TemporaryDrawer info={inf}/> :
+                                        <Login/>
+                                    }
                     </div>
                 </div>
             </Router>
