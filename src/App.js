@@ -13,6 +13,7 @@ import TemporaryDrawer from './Menu';
 
 
 
+
 const LoginView = () => (
     <Login/>
 );
@@ -32,15 +33,15 @@ class App extends Component {
 
     render() {
             const inf = {
-                        "name":"cosw",
-                        "email":"cosw"
+                        "name":"tiffany.estupinan",
+                        "email":"tiffany.estupinan@mail.escuelaing.edu.co"
                     }
             return (
             <Router>
                 <div className="App">
                     <header className="App-header">
                         <img src={logo} className="App-logo" alt="logo"/>
-                        <h1 className="App-title">TODO React App</h1>
+                        <h1 className="App-title">MyUniApp</h1>
                     </header>
 
                     <br/>

@@ -19,9 +19,10 @@ import ExitToApp from '@material-ui/icons/ExitToApp';
 import Edit from '@material-ui/icons/Edit';
 import Link from '@material-ui/core/Link';
 import AddIcon from '@material-ui/icons/Add';
-
+import {Login} from "./component/Login";
 import {CardTask} from "./CardTask";
 
+import { BrowserRouter as Router, Route} from "react-router-dom";
 const drawerWidth = 320;
 
 const styles = theme => ({
@@ -85,16 +86,29 @@ class TemporaryDrawer extends React.Component {
     state = {
         open: false,
         tasks: [
-            {"description": "Implementation",
-             "responsible": {
-              "name": "tif",
-               "email": "tif@gmail"
-                            },
-                "status": "done",
-                 "dueDate": 20191212
-                        }
+            {
+              	"description": "some description text ",
+              	"responsible": {
+              		"name": "Santiago Carrillo",
+              		"email": "sancarbar@gmail"
+              	},
+              	"status": "ready",
+              	"dueDate": 156464645646},
+
+             {
+                	"description": "some description text ",
+                	"responsible": {
+                		"name": "Santiago Carrillo",
+                		"email": "sancarbar@gmail"
+                	},
+                	"status": "ready",
+                	"dueDate": 156464645646
+               },
+
+
         ]
     };
+
 
     handleDrawerOpen = () => {
         this.setState({open: true});
@@ -103,6 +117,11 @@ class TemporaryDrawer extends React.Component {
     handleDrawerClose = () => {
         this.setState({open: false});
     };
+
+    logout(event){
+            window.location.reload();
+            localStorage.setItem('isLoggedIn',false);
+    }
 
     render() {
         const {classes, theme} = this.props;
@@ -160,10 +179,13 @@ class TemporaryDrawer extends React.Component {
                         </div>
                     </div>
                     <Divider/>
+                      <Router>
                     <div className="bottom">
-                        <ExitToApp/>
-                        <Link href="#">Logout</Link>
+                          <Button onClick={this.logout}>LogOut</Button>
+
+
                     </div>
+                </Router>
                 </Drawer>
                 <main
                     className={classNames(classes.content, {
@@ -171,9 +193,9 @@ class TemporaryDrawer extends React.Component {
                     })}
                 >
                     <div className={classes.drawerHeader}/>
-                    /*{ this.state.tasks.map( task => {
+                    { this.state.tasks.map( task => {
                         return(<CardTask info={task}/>);
-                    })}*/
+                    })}
                     <div className="rigth">
                         <Fab color="primary" aria-label="Add">
                             <AddIcon />

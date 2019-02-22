@@ -72,6 +72,7 @@ export class Login extends React.Component{
                             >
                                 Sign in
                             </Button>
+                            <h2>Registro</h2>
                         </form>
                     </Paper>
                 </main>

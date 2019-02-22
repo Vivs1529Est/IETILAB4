@@ -37,7 +37,7 @@ export class CardTask extends React.Component {
                                     </Typography>
                                 </div>
                                 <div >
-                                    {this.props.info.status === "Done" ? <CheckCircle/> : <div/>}
+                                    {this.props.info.status === "Complete" ? <CheckCircle/> : <div/>}
                                     {this.props.info.status === "Ready" ? <CheckCircleOutline/> : <div/>}
                                     {this.props.info.status === "In Progress" ? <DonutLarge/> : <div/>}
                                 </div>
