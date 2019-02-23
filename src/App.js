@@ -9,7 +9,7 @@ import {Login} from "./component/Login";
 import {TodoApp} from "./TodoApp";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import TemporaryDrawer from './Menu';
-
+import {Register} from "./register/RegisterType";
 
 
 
@@ -60,6 +60,8 @@ class App extends Component {
                             <TemporaryDrawer info={inf}/> : <Login/>
                         }
                     </div>
+                    
+                   
 
 
                 </div>

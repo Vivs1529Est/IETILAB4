@@ -8,13 +8,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import LockIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import './Login.css'
-
+import './RegisterType.css'
+import Link from '@material-ui/core/Link';
 import logof from './../logof.jpg';
-import {RegisterType} from "./../register/RegisterType";
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 
-export class Login extends React.Component{
+
+export class RegisterType extends React.Component{
         constructor(props) {
             super(props);
             this.state={email:"", password: ""};
@@ -27,11 +26,7 @@ export class Login extends React.Component{
                 localStorage.setItem('isLoggedIn', "true");
             this.setState({email:"", password: ""});
         }
-        
-    register(event){
-            window.location.reload();
-            localStorage.setItem('isLoggedIn',false);
-    }
+
 
     render(){
         return (
@@ -81,19 +76,7 @@ export class Login extends React.Component{
                             >
                                 Sign in
                             </Button>
-                            
-                             <br/> 
-                              <br/>
-                               <br/>
-                            <Router>
-                            
-                            
-                    <div className="bottom">
-                          <Button onClick={this.register}>Register</Button>
-
-
-                    </div>
-                </Router>
+                             <Link href="#" >Register</Link>
                         </form>
                     </Paper>
                 </main>
@@ -101,4 +84,10 @@ export class Login extends React.Component{
         );
     }
 
-}
+}/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
