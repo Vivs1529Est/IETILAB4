@@ -47,13 +47,7 @@ class App extends Component {
                     <br/>
                     <br/>
 
-                    <ul>
-                        {localStorage.getItem('isLoggedIn') === "true"?
-                            <li><Link to="/todo">Todo</Link></li> : <li><Link to="/">Login</Link></li>
-
-                              }
-                    </ul>
-
+                
                     <div>
                         {localStorage.getItem('isLoggedIn') === "true"?
 

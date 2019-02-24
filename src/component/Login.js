@@ -9,11 +9,24 @@ import LockIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import './Login.css'
-
 import logof from './../logof.jpg';
 import {RegisterType} from "./../register/RegisterType";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
+
+const theme = createMuiTheme({
+    palette: {
+      primary: { main: "#B40404" },
+    },
+    overrides: {
+        MuiButton: {
+          raisedPrimary: {
+            color: 'white',
+          },
+        },
+      }
+  });
 export class Login extends React.Component{
         constructor(props) {
             super(props);
@@ -39,13 +52,11 @@ export class Login extends React.Component{
                 <CssBaseline />
                 <main className="layout">
                     <Paper elevation={3} className="paper">
-                        <Avatar className="avatar">
-                            <LockIcon />
-                        </Avatar>
-                        <Typography variant="h5">
-                            Task Planner App
+                        <img src={logof} alt="logo" className="img"/>   
+                        <Typography variant="headline">
+                            Sign In
                         </Typography>
-                         <img src={logof} alt="logo" className="img"/>       
+                             
                         <form className="form" onSubmit={this.handleSubmit}>
                             <FormControl margin="normal" required fullWidth>
                                 <InputLabel htmlFor="email">Email Address</InputLabel>
@@ -72,31 +83,51 @@ export class Login extends React.Component{
 
 
                             </FormControl>
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="raised"
-                                color="primary"
-                                className="submit"
-                            >
-                                Sign in
-                            </Button>
                             
-                             <br/> 
-                              <br/>
-                               <br/>
-                            <Router>
-                            
-                            
-                    <div className="bottom">
-                          <Button onClick={this.register}>Register</Button>
+                            <FormControl margin="normal" required fullWidth>
+                             <MuiThemeProvider theme={theme}>
+                                <Button
+                                    align="center"
+                                    type="submit"
+                                    fullWidth
+                                    variant="raised"
+                                    color= "primary"
+                                    className="submit"
 
-
-                    </div>
-                </Router>
+                                >
+                                    Login
+                                </Button>
+                            </MuiThemeProvider>
+                              </FormControl>
+                            
+                           
                         </form>
                     </Paper>
                 </main>
+                <main className="layout">
+                <FormControl margin="normal" required fullWidth>
+                              <MuiThemeProvider theme={theme}>
+                              <Router>
+                                <Button
+                                    align="center"
+                                    type="submit"
+                                    fullWidth
+                                    variant="raised"
+                                    color= "primary"
+                                    className="submit"
+                                    onClick={this.register}
+                                            >
+                                   Register
+                                 </Button>
+                               </Router>  
+                               </MuiThemeProvider>
+                               </FormControl>
+                </main>
+                
+                
+                
+                
+                
             </React.Fragment>
         );
     }
