@@ -9,7 +9,7 @@ import {Login} from "./component/Login";
 import {TodoApp} from "./TodoApp";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import TemporaryDrawer from './Menu';
-import {Register} from "./register/RegisterType";
+//import {RegisterType} from "./../register/RegisterType";
 
 
 
@@ -21,6 +21,10 @@ const LoginView = () => (
 const TodoView = () => (
     <TodoApp/>
 );
+
+/*const RegisterView = () => (
+    <RegisterType/>
+);*/
 
 class App extends Component {
 
@@ -41,7 +45,7 @@ class App extends Component {
                 <div className="App">
                     <header className="App-header">
                         <img src={logo} className="App-logo" alt="logo"/>
-                        <h1 className="App-title">MyUniApp</h1>
+                        
                     </header>
 
                     <br/>

@@ -43,7 +43,7 @@ export class Login extends React.Component{
         
     register(event){
             window.location.reload();
-            localStorage.setItem('isLoggedIn',false);
+            
     }
 
     render(){
@@ -80,8 +80,6 @@ export class Login extends React.Component{
                                    value = {this.state.password}
                                    onChange={event => this.setState({password:event.target.value})}
                                 />
-
-
                             </FormControl>
                             
                             <FormControl margin="normal" required fullWidth>
@@ -107,7 +105,7 @@ export class Login extends React.Component{
                 <main className="layout">
                 <FormControl margin="normal" required fullWidth>
                               <MuiThemeProvider theme={theme}>
-                              <Router>
+                              
                                 <Button
                                     align="center"
                                     type="submit"
@@ -115,15 +113,17 @@ export class Login extends React.Component{
                                     variant="raised"
                                     color= "primary"
                                     className="submit"
-                                    onClick={this.register}
-                                            >
+                                    nClick={this.props.handleLogin}
+                                    size="large"
+                                    component={ Link } to="./../register/RegisterType"
+                                 
+                                    >
                                    Register
                                  </Button>
-                               </Router>  
+                             
                                </MuiThemeProvider>
                                </FormControl>
                 </main>
-                
                 
                 
                 
